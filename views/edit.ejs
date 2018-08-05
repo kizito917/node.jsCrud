@@ -1,0 +1,17 @@
+<% include partials/header.ejs %>
+	<form action="/event/edit/<%= items[0].id %>" method="POST">
+		<div class="container">
+			<div class="form-group row">
+				<label for="name">Name</label>
+				<input type="text" name="name" value="<%= items[0].name %>" class="form-control">
+			</div>
+			<div class="form-group row">
+				<label for="email">Email</label>
+				<input type="email" name="email" value="<%= items[0].email %>" class="form-control">
+			</div>
+			<div class="form-group row">
+				<input type="submit" name="submit" value="Update" class="btn btn-primary">
+			</div>
+		</div>
+	</form>
+<% include partials/footer.ejs %>

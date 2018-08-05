@@ -1,0 +1,40 @@
+<% include partials/header.ejs %>
+	<div class="">
+		<div class="col-sm-12">
+			<a href="/event/add" class="btn btn-primary btn-lg">Add New Details</a>
+		</div>
+	</div>
+	<br>
+
+	<div class="=">
+		<div class="col-sm-12">
+			<% if (items.length > 0) { %>
+				<table class="table">
+					<thead>
+						<tr>
+							<th style="width: 1%; text-align: center;">ID</th>
+							<th style="width: 49%;">Name</th>
+							<th style="width: 20%;">Email</th>
+							<th colspan="2" style="width: 20%;">Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% items.forEach(function(item, index){ %>
+						<tr>
+							<td style="width: 1%; text-align: center;"><%= index + 1 %></td>
+							<td style="width: 49%;"><%= item.name %></td>
+							<td style="width: 20%;"><%= item.email %></td>
+							<td>
+								<a href="/event/edit/<%= item.id %>" class="btn btn-info">Edit</a>
+								<a href="/event/delete/<%= item.id %>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete data?')">Delete</a>
+							</td>
+						</tr>
+						<% 	}); %>
+					</tbody>
+				</table>
+			<% } else { %>
+				<p><strong>There are no records available</strong></p>
+			<% } %>
+		</div>
+	</div>
+<% include partials/footer.ejs %>

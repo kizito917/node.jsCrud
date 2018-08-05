@@ -1,0 +1,17 @@
+<% include partials/header.ejs %>
+	<form action="/event/add" method="POST">
+		<div class="container">
+			<div class="form-group row">
+				<label for="name">Name</label>
+				<input type="text" name="name" class="form-control">
+			</div>
+			<div class="form-group row">
+				<label for="email">Email</label>
+				<input type="email" name="email" class="form-control">
+			</div>
+			<div class="form-group row">
+				<input type="submit" name="submit" value="Add" class="btn btn-primary">
+			</div>
+		</div>
+	</form>
+<% include partials/footer.ejs %>
